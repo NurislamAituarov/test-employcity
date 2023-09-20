@@ -208,12 +208,16 @@ a {
   }
   .form__input {
     height: 48px;
+    text-align: start;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
   }
 
   input {
     max-width: 370px;
     height: 48px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 3px;
     border: none;
     opacity: 85%;
@@ -280,6 +284,93 @@ a {
     width: auto;
     grid-column: 2/3;
   }
+}
+
+// Select
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 7px;
+  height: auto;
+  background-color: #3d4050;
+}
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue);
+  border-radius: 3px;
+}
+
+.select {
+  position: relative;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.select .selectBtn {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #3d4050;
+}
+.select .selectBtn:after {
+  content: '';
+  position: absolute;
+  top: 45%;
+  right: 15px;
+  width: 6px;
+  height: 6px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  transition: 0.2s ease;
+}
+.select .selectBtn.toggle {
+  border-radius: 3px 3px 0 0;
+}
+.select .selectBtn.toggle:after {
+  -webkit-transform: translateY(-50%) rotate(-135deg);
+  transform: translateY(-50%) rotate(-135deg);
+}
+.select .selectDropdown {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  max-height: 180px;
+  border-radius: 0 0 3px 3px;
+  overflow: hidden;
+  z-index: 1;
+  background: var(--color-bg);
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+  visibility: hidden;
+  transition: 0.2s ease;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+.select .selectDropdown .option {
+  padding: 8px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.select .selectDropdown .option:hover {
+  color: #42a9ed;
+}
+.select .selectDropdown.toggle {
+  visibility: visible;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
 // Footer //
