@@ -1,11 +1,15 @@
 {
   "name": "test",
+  "homepage": "https://nurislamaituarov.github.io/test-employcity/",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve --env develop"
+    "dev": "webpack serve --env develop",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "css-loader": "^6.5.1",
+    "gh-pages": "^6.0.0",
     "html-loader": "^3.1.0",
     "mini-css-extract-plugin": "^2.5.2",
     "sass": "^1.49.0",
