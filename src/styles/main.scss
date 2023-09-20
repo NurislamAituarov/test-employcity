@@ -92,9 +92,12 @@ a {
       line-height: 15.6px;
       text-transform: uppercase;
       transition: 0.3s;
-      &:hover {
-        cursor: pointer;
-        color: var(--color-blue-hover);
+      a {
+        color: white;
+        &:hover {
+          cursor: pointer;
+          color: var(--color-blue-hover);
+        }
       }
     }
   }
@@ -254,18 +257,45 @@ a {
       width: 100%;
     }
     input[type='range']::-webkit-slider-runnable-track {
-      background: white;
+      background: #b3b3b3;
       height: 6px;
+      border: 1px solid white;
+      border-radius: 3px;
     }
+
     input[type='range']::-webkit-slider-thumb {
-      width: 37px;
-      height: 37px;
-      -webkit-appearance: none;
-      appearance: none;
       margin-top: -6px;
-      background: red;
-      border-radius: 50%;
       cursor: pointer;
+      background: var(--color-blue);
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+    }
+
+    /* Стилизация трека (бара) ползунка в Firefox */
+    input[type='range']::-moz-range-track {
+      background: #b3b3b3;
+      height: 6px;
+      border: 1px solid white;
+      border-radius: 3px;
+    }
+
+    /* Стилизация ползунка в Firefox */
+    input[type='range']::-moz-range-thumb {
+      margin-top: -6px;
+      cursor: pointer;
+      background: var(--color-blue);
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+    }
+
+    input[type='range'] {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      background: none;
     }
   }
   .label__file {

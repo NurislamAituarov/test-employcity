@@ -42,3 +42,53 @@ close.addEventListener('click', () => {
   nav.classList.remove('header__nav-mobile-active');
   document.body.style.overflow = 'visible';
 });
+
+// Input range
+
+function valueInpTypeRange() {
+  const range = document.querySelector('#range');
+  const text = document.querySelector('.percent');
+  text.innerHTML = `${range.value} %`;
+}
+//Навешиваем событие
+const a = document.querySelector('#range');
+a.addEventListener('input', valueInpTypeRange);
+
+// form //
+
+const form = document.querySelector('.form');
+const select = document.querySelector('.selectBtn');
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  formData.append('system-type', select.textContent);
+
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: formData,
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Handle a successful response from the server
+        console.log('Form submitted successfully');
+        // You can perform any additional actions here
+      } else {
+        // Handle errors if the server returns an error response
+        console.error('Form submission failed');
+      }
+    })
+    .catch((error) => {
+      // Handle network errors or other issues
+      console.error('An error occurred:', error);
+    })
+    .finally(() => {
+      select.innerHTML = 'Выберите тип системы';
+      form.reset();
+    });
+});
+
+function submitForm() {
+  form.submit();
+}

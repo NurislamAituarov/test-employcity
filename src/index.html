@@ -15,20 +15,22 @@
           </div>
           <nav class="header__nav">
             <ul>
-              <li>Бизнес</li>
-              <li>О нас</li>
-              <li>Цены</li>
-              <li>Оформить заказ</li>
+              <li>
+                <a href="#">Бизнес</a>
+              </li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Цены</a></li>
+              <li><a href="#">Оформить заказ</a></li>
             </ul>
           </nav>
 
           <div class="header__nav-mobile">
             <nav class="header__nav">
               <ul>
-                <li>Бизнес</li>
-                <li>О нас</li>
-                <li>Цены</li>
-                <li>Оформить заказ</li>
+                <li><a href="#">Бизнес</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Цены</a></li>
+                <li><a href="#">Оформить заказ</a></li>
               </ul>
             </nav>
           </div>
@@ -114,7 +116,7 @@
             </div>
 
             <div class="order__form">
-              <form>
+              <form class="form">
                 <div class="select form__input">
                   <div class="selectBtn" data-type="firstOption">Выберите тип системы</div>
                   <div class="selectDropdown">
@@ -132,15 +134,35 @@
                   </div>
                 </div>
 
-                <input type="text" placeholder="Ваш e-mail" class="form__input" />
-                <input type="text" placeholder="Ваше имя" class="form__input" />
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Ваш e-mail"
+                  class="form__input"
+                />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Ваше имя"
+                  class="form__input"
+                />
 
                 <label for="range" class="label__range form__input">
                   <p>
                     <span>Sed ut perspiciatis, unde omnis iste natus</span>
-                    <span>75%</span>
+                    <span class="percent">75 %</span>
                   </p>
-                  <input id="range" type="range" />
+                  <input
+                    id="range"
+                    type="range"
+                    name="percent"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value="75"
+                  />
                 </label>
 
                 <label for="file" class="label__file form__input">
